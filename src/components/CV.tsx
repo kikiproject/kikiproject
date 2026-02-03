@@ -10,7 +10,7 @@ import { IoSchoolOutline } from 'react-icons/io5'
 const toolsUsed = ['VS Code', 'Laragon', 'PG Admin 4', 'Canva', 'Affinity', 'CapCut', 'CorelDraw', 'Photoshop', 'Vegas Pro']
 
 // Tools yang dipahami
-const toolsUnderstood = ['Premier Pro', 'Microsoft Excel']
+const toolsUnderstood = ['Premier Pro', 'Microsoft Excel', 'CorelDRAW', 'Project IDX', 'Firebase', 'Acode (Mobile)']
 
 // Tools Website/Online
 const toolsWebsite = ['Visual Paradigm', 'Figma', 'Draw.io', 'ChatGPT', 'Gemini AI', 'DeepSeek', 'GitHub', 'Codedex']
@@ -134,7 +134,7 @@ export default function CV() {
                 Profil Singkat
               </h4>
               <p className="text-soft-gray-400 leading-relaxed">
-                Mahasiswa Program Studi Sistem dan Teknologi Informasi di Institut Teknologi dan Sains Mandala yang memiliki minat dan kemampuan di bidang analisis sistem dan web programming. Terbiasa belajar hal baru, memiliki jiwa kepemimpinan (leadership), bertanggung jawab, dan siap mengembangkan keterampilan di dunia profesional. Mampu menganalisis kebutuhan client dan memodifikasi fitur sesuai kebutuhan.
+                Mahasiswa Program Studi Sistem dan Teknologi Informasi di Institut Teknologi dan Sains Mandala yang memiliki minat dan kemampuan di bidang analisis sistem, web programming, dan leadership. Terbiasa belajar hal baru, bertanggung jawab, dan siap mengembangkan keterampilan di dunia profesional. Mampu menganalisis kebutuhan client dan memodifikasi fitur sesuai kebutuhan.
               </p>
             </motion.div>
 

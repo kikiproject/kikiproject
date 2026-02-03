@@ -79,7 +79,7 @@ export default function Hero() {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="text-soft-gray-400 text-base max-w-xl mx-auto lg:mx-0 mb-6"
             >
-              Mahasiswa Program Studi Sistem dan Teknologi Informasi yang memiliki minat dan kemampuan di bidang analisis sistem, web programming, dan desain landing page. Terbiasa belajar hal baru, bertanggung jawab, dan siap mengembangkan keterampilan di dunia profesional.
+              Mahasiswa Program Studi Sistem dan Teknologi Informasi yang memiliki minat dan kemampuan di bidang analisis sistem, web programming, dan leadership. Terbiasa belajar hal baru, bertanggung jawab, dan siap mengembangkan keterampilan di dunia profesional.
             </motion.p>
 
             {/* Contact Info */}
