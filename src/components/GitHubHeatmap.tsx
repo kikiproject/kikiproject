@@ -33,6 +33,18 @@ export default function GitHubHeatmap() {
   const [contributions, setContributions] = useState<number[]>([])
 
   const GITHUB_USERNAME = 'kikiproject'
+  const [error, setError] = useState(false)
+
+  // Fallback data jika API rate limited
+  const fallbackUser: GitHubUser = {
+    login: 'kikiproject',
+    name: 'Rizki Habibi',
+    avatar_url: 'https://github.com/kikiproject.png',
+    public_repos: 10,
+    followers: 0,
+    following: 0,
+    created_at: '2025-01-01T00:00:00Z'
+  }
 
   useEffect(() => {
     // Fetch GitHub user data
@@ -43,14 +55,23 @@ export default function GitHubHeatmap() {
           fetch(`https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=updated&per_page=6`)
         ])
         
-        if (userRes.ok) {
-          const userData = await userRes.json()
-          setUser(userData)
-        }
-        
-        if (reposRes.ok) {
-          const reposData = await reposRes.json()
-          setRepos(reposData)
+        // Check for rate limit (403) or other errors
+        if (userRes.status === 403 || reposRes.status === 403) {
+          console.warn('GitHub API rate limit reached, using fallback data')
+          setError(true)
+          setUser(fallbackUser)
+        } else {
+          if (userRes.ok) {
+            const userData = await userRes.json()
+            setUser(userData)
+          } else {
+            setUser(fallbackUser)
+          }
+          
+          if (reposRes.ok) {
+            const reposData = await reposRes.json()
+            setRepos(reposData)
+          }
         }
 
         // Generate contribution pattern based on real join date
@@ -70,6 +91,8 @@ export default function GitHubHeatmap() {
         setContributions(data)
       } catch (error) {
         console.error('Error fetching GitHub data:', error)
+        setError(true)
+        setUser(fallbackUser)
       } finally {
         setLoading(false)
       }
